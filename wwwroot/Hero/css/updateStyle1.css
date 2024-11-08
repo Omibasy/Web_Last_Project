@@ -1,0 +1,510 @@
+﻿.main {
+    padding-top: 300px;
+    padding-bottom: 300px;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero-run {
+    padding-top: 75px;
+}
+
+.hero .container {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    min-height: 400px;
+}
+
+.hero__box {
+    min-height: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero__list {
+    position: absolute;
+    display: flex;
+    z-index: 1000;
+    right: 0;
+    top: -70px;
+}
+
+.hero__item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.hero__updata-btn svg {
+    width: 50px;
+    height: 50px;
+}
+
+    .hero__updata-btn svg path {
+        stroke: var(--dark-blue);
+        transition: stroke .3s ease-in-out;
+    }
+
+.hero__updata-btn {
+    border: 4px solid var(--dark-blue);
+    border-radius: 40px;
+    padding: 3px;
+    transition: border-color .3s ease-in-out;
+}
+
+
+
+    .hero__updata-btn:nth-child(2) {
+        margin-left: auto;
+    }
+
+.hero__item:nth-child(2) label {
+    display: block;
+}
+
+.hero__titel {
+    font-size: 70px;
+    font-weight: 800;
+    margin: 0;
+    color: var(--dark-blue);
+}
+
+.swiper-container {
+    position: absolute;
+    min-height: inherit;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .swiper-slide:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent;
+        background-image: linear-gradient(left, rgba(0, 0, 0, 0), var(--background-white));
+        opacity: 0.6;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: var(--container-width);
+    }
+
+.swiper-button-prev {
+    left: 20px;
+    top: 50%;
+    height: 42px;
+    width: 42px;
+    right: auto;
+    transition: left 0.3s linear;
+}
+
+    .swiper-button-prev:after {
+        content: "";
+        border-top: 5px solid var(--yellow);
+        border-left: 5px solid var(--yellow);
+        width: 24px;
+        height: 24px;
+        transform: rotate(-45deg);
+        padding-left: 4px;
+        margin-bottom: 1px;
+        transition: border-color 0.3s linear;
+    }
+
+.swiper-button-next {
+    right: 20px;
+    top: 50%;
+    height: 42px;
+    width: 42px;
+    left: auto;
+    transition: right 0.3s linear;
+}
+
+    .swiper-button-next:after {
+        content: "";
+        border-top: 5px solid var(--yellow);
+        border-left: 5px solid var(--yellow);
+        width: 24px;
+        height: 24px;
+        transform: rotate(135deg);
+        margin-right: 4px;
+        margin-bottom: 1px;
+        transition: border-color 0.3s linear;
+    }
+
+.swiper-button-prev:hover.swiper-button-prev:after {
+    border-color: rgb(252, 141, 14);
+}
+
+.swiper-button-next:hover.swiper-button-next:after {
+    border-color: rgb(252, 141, 14);
+}
+
+.swiper-button-prev:active.swiper-button-prev:after {
+    border-color: rgb(248, 74, 16);
+}
+
+.swiper-button-next:active.swiper-button-next:after {
+    border-color: rgb(248, 74, 16);
+}
+
+.hero:hover .swiper-button-prev {
+    left: 10px
+}
+
+.hero:hover .swiper-button-next {
+    right: 10px;
+}
+
+.application .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.application__tittel {
+    color: var(--background-black);
+    font-size: 32px;
+    border: none;
+}
+
+.application__form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.application__label--left {
+    margin-right: 4%
+}
+
+.application__label {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.application__label--right,
+.application__label--left {
+    width: 48%;
+}
+
+
+.application__input-text,
+.application__textarea {
+    width: 100%;
+    border: 2px solid var(--gray);
+    background: #eef2f4;
+    outline: none;
+    border-radius: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--background-black);
+    padding: 23.9px 32px;
+    transition: background 0.1s linear, border-color 0.3s ease-in-out;
+}
+
+.application__textarea {
+    width: 100%;
+    resize: none;
+}
+
+
+
+.application__span {
+    visibility: hidden;
+}
+
+.hero__label {
+    z-index: 100;
+}
+
+.hero__label--top {
+    max-width: calc(var(--container-width)/0.5);
+    margin-right: auto;
+}
+
+.hero__label--bottom {
+    margin-left: auto;
+}
+
+.hero__label--bottom,
+.application__label-btn {
+    outline: 4px solid var(--blue);
+    transition: outline 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.application__label-btn {
+    position: relative;
+}
+
+.hero__link,
+.application__button {
+    width: 210px;
+    outline: none;
+    border: none;
+    text-align: center;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 20px;
+    font-weight: 300;
+    background-color: var(--background-white);
+    color: var(--background-black);
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.hero__label--bottom:hover,
+.application__label-btn:hover {
+    outline-color: var(--yellow);
+}
+
+.hero__label--bottom:active,
+.hero__label--bottom:focus-within,
+.application__label-btn:active,
+.application__label-btn:focus-within {
+    background-color: var(--light-blue);
+    outline-color: var(--dark-blue);
+}
+
+
+
+.swiper-slide__label {
+    position: absolute;
+    z-index: 100;
+    width: calc(var(--container-width)/2.5);
+    top: 50%;
+}
+
+.swiper-slide__input {
+    width: 100%;
+    z-index: 100;
+    font-weight: 600;
+    font-size: 50px;
+    margin: 0;
+}
+
+.hero--update-input {
+    border: 4px solid var(--gray);
+    background: #eef2f4;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--dark-blue);
+    outline: none;
+    transition: background 0.1s linear, border-color 0.3s ease-in-out;
+}
+
+
+    .hero--update-input:hover {
+        border-color: rgb(211, 82, 18);
+    }
+
+    .hero--update-input:active,
+    .hero--update-input:focus {
+        border-color: rgb(211, 82, 18);
+        background: #f3fbff;
+    }
+
+.application__label-tittel {
+    position: relative;
+    width: calc(var(--container-width)/2.5);
+}
+
+.application__tittel {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    line-height: 50px;
+    margin: 0 0 30px;
+    color: #0a0a0a;
+    border-bottom: 4px solid var(--gray);
+    padding: 5px 5px 0px;
+    transition: border-color 0.3s ease-in-out, color .3s ease-in-out;
+}
+
+    .application__tittel:hover {
+        border-color: var(--dark-blue);
+    }
+
+    .application__tittel:active,
+    .application__tittel:focus {
+        border-color: var(--background-black);
+        color: var(--background-black);
+    }
+
+.application__label {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    border: 2px solid var(--gray);
+    background: #eef2f4;
+    padding: 23.9px 32px;
+    border-radius: 20px;
+    transition: border .3s ease-in-out, background .3s ease-in-out;
+}
+
+.application__label--left,
+.application__label--right {
+    width: 48%;
+}
+
+.application__label--left {
+    margin-right: 4%;
+}
+
+.application__label-bottom {
+    padding-bottom: 200px;
+}
+
+.application__input-text {
+    width: 250px;
+    border: none;
+    outline: none;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--background-black);
+    padding: 5px;
+    background: var(--background-white);
+}
+
+.application__label--left .application__input-text {
+    width: 250px;
+}
+
+.application__label:hover {
+    border-color: var(--dark-blue);
+}
+
+.application__label:focus-within {
+    border-color: var(--background-black);
+}
+
+.application__input-text:focus-within {
+    border-bottom: 1px solid var(--background-black);
+}
+
+.hero__updata-btn:hover svg path {
+    stroke: var(--blue);
+}
+
+.hero__updata-btn:active svg path,
+.hero__updata-btn:focus svg path {
+    stroke: var(--light-blue);
+}
+
+.hero__updata-btn:hover {
+    border-color: var(--blue);
+}
+
+.hero__updata-btn:active,
+.hero__updata-btn:focus {
+    border-color: var(--light-blue);
+}
+
+
+.hero__updata-btn input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+.img--none {
+    visibility: collapse;
+    width: 250px;
+    height: 70px;
+}
+
+.hero__input-file {
+    display: none;
+}
+
+.just-validate-error-label {
+    position: absolute;
+}
+
+.application__label-btn .just-validate-error-label,
+.application__label-bottom .just-validate-error-label,
+.application__label--right .just-validate-error-label,
+.application__label--left .just-validate-error-label,
+.application__label-tittel .just-validate-error-label,
+.swiper-slide__label .just-validate-error-label,
+.hero__label .just-validate-error-label {
+    font-size: 24px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.hero__label--top .just-validate-error-label {
+    left: 80px;
+    top: 72px;
+}
+
+.hero__label--bottom .just-validate-error-label {
+    top: auto;
+    left: calc(var(--container-width) - 320px);
+    bottom: 104px;
+}
+
+.swiper-slide__label .just-validate-error-label {
+    top: -27px;
+}
+
+.swiper-slide__labal-file .just-validate-error-label {
+    font-size: 32px;
+    padding-left: 4px;
+    padding-right: 4px;
+    left: 35%;
+    top:0;
+}
+
+.application__label-tittel .just-validate-error-label {
+    top: -28px;
+}
+
+.application__label--left .just-validate-error-label,
+.application__label--right .just-validate-error-label,
+.application__label-bottom .just-validate-error-label {
+    top: 28px;
+    left: 240px;
+}
+
+.application__label--left .just-validate-error-label {
+    left: 290px;
+}
+
+.application__label-btn .just-validate-error-label {
+    top: -30px;
+    left: 0;
+    background
+}
+
+

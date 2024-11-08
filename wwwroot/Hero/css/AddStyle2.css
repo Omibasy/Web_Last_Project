@@ -1,0 +1,195 @@
+﻿
+.hero .container {
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.hero__label--bottom {
+    position: relative;
+    display: inline-block;
+}
+
+    .hero__label--top .just-validate-error-label,
+    .hero__label--bottom .just-validate-error-label {
+        position: absolute;
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 400;
+    }
+
+    .hero__label--bottom .just-validate-error-label {
+        top: 10px;
+        left: 22%;
+    }
+
+
+.img--none {
+    visibility: collapse;
+}
+
+.hero__label--bottom input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+    .hero__label--bottom input[type=file] + span {
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        transition: box-shadow .3s ease-in-out;
+    }
+
+        .hero__label--bottom input[type=file] + span svg {
+            position: absolute;
+            fill: rgba(0,123,255,.25);
+            width: 200px;
+            height: 200px;
+            transition: fill .3s ease-in-out;
+        }
+
+    .hero__label--bottom input[type=file]:hover + span {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.952);
+    }
+
+        .hero__label--bottom input[type=file]:hover + span svg {
+            fill: rgba(0, 123, 255, 0.952);
+        }
+
+    .hero__label--bottom input[type=file]:active + span {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.952);
+    }
+
+        .hero__label--bottom input[type=file]:active + span svg {
+            fill: rgba(0, 123, 255, 0.952);
+        }
+
+
+.hero__label__span--bottom {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    overflow: hidden;
+    height: 480px;
+    width: 100%;
+}
+
+.hero__label--bottom .hero__label__span {
+    display: block;
+    margin: 0 0 20px 0;
+}
+
+.hero__label--top .just-validate-error-label {
+    top: -35px;
+    left: 22%;
+}
+
+
+.hero__label--top {
+    position:relative;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.hero__label--top__text,
+.hero__label__span {
+    font-size: 36px;
+    line-height: 36px;
+}
+
+.hero__label__span {
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+    .hero__label--top__text:hover {
+        border-color: var(--blue);
+    }
+
+    .hero__label--top__text:focus {
+        border-color: var(--dark-blue);
+    }
+
+
+.layout-submit {
+    width: 100%;
+    box-shadow: 0px 20px 80px rgba(0, 0, 0, 0.1);
+}
+
+
+    .layout-submit .container {
+        flex-direction: row;
+        justify-content: space-between;
+        background: none;
+    }
+
+.form-layout__btn {
+    border: none;
+}
+
+.layout-submit {
+    box-shadow: none;
+}
+
+    .layout-submit .container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-top: 1px solid black;
+        background: #fff;
+    }
+
+.hero__label--top__text {
+    width: 78%;
+    background: #eef2f4;
+    border: 2px solid var(--gray);
+    outline: none;
+    border-radius: 20px;
+    padding: 16px 32px;
+    color: var(--background-black);
+    font-weight: 400;
+    transition: border-color .3s ease-in-out, background-color .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+.hero__label__span--top {
+width: 20%;
+}
+
+.hero__label--top__text:hover {
+    border-color: var(--background-black);
+}
+
+    .hero__label--top__text:focus,
+    .hero__label--top__text:active {
+        border-color: var(--background-black);
+        background-color: #f3fbff;
+    }
+
+.hero__label--top:has(.just-validate-error-label) {
+    > .hero__label--top__text {
+    opacity: 0.4;
+    border-color: red;
+}
+
+> .hero__label--top__text:hover,
+.hero__label--top__text:active,
+.hero__label--top__text:focus {
+    opacity: 1;
+}
+}
+
+.hero__label--bottom:has(.just-validate-error-label) {
+    > input[type=file]+span {
+    box-shadow: 0 0 0 0.2rem red;
+} 
+}

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/General/css/normalize.css">
+    <link rel="stylesheet" href="~/General/css/Style8.css">
+    <link rel="stylesheet" href="~/Layout/css/Style4.css">
+    
+</head>
+
+
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <a href="#" class="logo header__logo">
+                <img class="header__logo__img" src="~/Layout/img/@ViewBag.Container.Logo" alt="логотип кампании @ViewBag.Container.Data.CompanyName">
+            </a>
+            <nav class="header__nav">
+                <ul class="header__list list-reset">
+                    <li class="header__list__item">
+                        <a  asp-controller="Home" asp-action="Admin" class="header__link">
+                            Админ
+                        </a>
+                    </li>
+                    <li class="header__list__item">
+                        <a href="~/Home/Index#"  class="header__link">
+                            @ViewBag.Container.Data.HeadingMenu[0]
+                        </a>
+                    </li>
+                    <li class="header__list__item">
+                        <a href="~/Home/Index#projects"  class="header__link">
+                            @ViewBag.Container.Data.HeadingMenu[1]
+                        </a>
+                    </li>
+                    <li class="header__list__item">
+                        <a href="~/Home/Index#services" class="header__link">
+                            @ViewBag.Container.Data.HeadingMenu[2]
+                        </a>
+                    </li>
+                    <li class="header__list__item">
+                        <a href="~/Home/Index#blog"  class="header__link">
+                            @ViewBag.Container.Data.HeadingMenu[3]
+                        </a>
+                    </li>
+                    <li class="header__list__item">
+                        <a  href="~/Home/Index#contacts" class="header__link">
+                            @ViewBag.Container.Data.HeadingMenu[4]
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <span class="footer__span">
+                @ViewBag.Container.Data.Footer
+            </span>
+        </div>   
+    </footer>
+  </body>
+</html>
+
+

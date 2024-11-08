@@ -1,0 +1,136 @@
+﻿:root {
+    --background-white: #fff;
+    --background-black: #212133;
+    --light-blue: #00b9fa;
+    --dark-blue: #164171;
+    --blue: #0780d5;
+    --bs-navbar-color: rgba(0, 0, 0, 0.55);
+    --gray: #c4c4c4;
+    --yellow: rgb(248, 88, 8);
+    --container-width: 1920px;
+    --width-list: 100%;
+}
+
+.blog .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.blog__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 2.6%;
+}
+
+.blog__card {
+    position: relative;
+    left: 0;
+    width: 23%;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 4px 8px 24px 14px rgba(0, 0, 0, .08);
+    transition: left 0.2s ease-in-out;
+}
+
+
+
+    .blog__card__time {
+        display: block;
+        font-size: 14px;
+        color: var(--background-white);
+        border-radius: 10px 10px 0 0;
+        padding-left: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 100%;
+        background: var(--dark-blue);
+        transition: background 0.3s ease-in-out;
+    }
+
+.blog__card__img {
+    display: block;
+    height: 200px;
+    width: 100%;
+}
+
+.blog__card__box {
+    padding: 20px;
+    background: var(--background-white);
+}
+
+.blog__card__titel {
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.blog__card__text {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+}
+
+.blog__box {
+    display: block;
+    width: 120px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--color-black);
+    outline: 3px solid transparent;
+    margin-top:auto;
+}
+
+.right-arrow {
+    display: inline-flex;
+    position: relative;
+    width: 20px;
+    height: 13px;
+    cursor: pointer;
+}
+
+    .right-arrow::before,
+    .right-arrow::after {
+        display: inline-flex;
+        position: absolute;
+        content: '';
+    }
+
+    .right-arrow::before {
+        top: 8px;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        background-color: var(--background-black);
+        transition: width 0.3s ease-in-out;
+    }
+
+    .right-arrow::after {
+        width: 6px;
+        height: 6px;
+        top: 6px;
+        transition: right 0.3s ease-in-out;
+    }
+
+    .right-arrow::after {
+        right: 0;
+        border-top: 2px solid var(--background-black);
+        border-right: 2px solid var(--background-black);
+        transform: rotate(45deg);
+    }
+
+.blog__card:hover {
+    position: relative;
+    left: -3px;
+}
+
+    .blog__card:hover .right-arrow::before {
+        width: 30px;
+    }
+
+    .blog__card:hover .right-arrow::after {
+        right: -10px;
+    }
+
+    .blog__card:hover .blog__card__time {
+        background-color: var(--blue);
+    }

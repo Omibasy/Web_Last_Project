@@ -1,0 +1,57 @@
+:root {
+    --blue:rgb(23, 57, 108);
+}
+
+
+html {
+    box-sizing: border-box;
+    background: #fff;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  
+  img {
+    max-width: 100%;
+  }
+  
+  
+  body {
+    min-width: 320px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background: #fafafa;
+  }
+  
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh 20% 10vh 20%;
+    width: 100%;
+    height: 100vh;
+}
+
+.img {
+    height: 20vw;
+}
+
+.box {
+   margin: 0 0 0 20px;
+}
+
+.title {
+    margin: 0 0 20px 0;
+    color: var(--blue);
+    font-size: 4vw;
+}
+
+.text {
+    margin: 0;
+    color: var(--blue);
+    font-size: 3vw;
+}

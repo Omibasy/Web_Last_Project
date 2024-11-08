@@ -1,0 +1,26 @@
+﻿.layout-submit {
+    width: 100%;
+    box-shadow: 0px 20px 80px rgba(0, 0, 0, 0.1);
+}
+
+
+    .layout-submit .container {
+        flex-direction: row;
+        justify-content: space-between;
+        background: none;
+    }
+
+.form-layout__btn {
+    border: none;
+}
+
+.layout-submit {
+    box-shadow: none;
+}
+
+    .layout-submit .container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-top: 1px solid black;
+        background: #fff;
+    }

@@ -1,0 +1,164 @@
+﻿
+
+
+.blog-card__box-right,
+.blog-card__label {
+    position: relative;
+}
+
+.just-validate-error-label {
+    position: absolute;
+    top: -25px;
+}
+
+.blog-card--input-file .just-validate-error-label {
+    right: 0;
+}
+
+.blog-card__box-right .just-validate-error-label {
+    top: -30px;
+    right: 0;
+}
+
+.blog-card__time {
+    top: -35px;
+}
+
+.blog-card--input {
+    border: 4px solid var(--gray);
+    background: #eef2f4;
+    text-align: left;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background 0.1s linear, border-color 0.3s ease-in-out;
+}
+
+
+
+.blog-card__time__box {
+    position: relative;
+}
+
+    .blog-card__time__box .just-validate-error-label {
+        width: 240px;
+    }
+
+    .blog-card__time__box input {
+        border: none;
+        outline: none;
+        width: 120px;
+        color: var(--gray);
+        transition: color .3s ease-in-out;
+    }
+
+        .blog-card__time__box input::-webkit-calendar-picker-indicator {
+            opacity: 0;
+            width: 18px;
+        }
+
+
+.open-button {
+    position: absolute;
+    pointer-events: none;
+    top: 1px;
+    right: 4px;
+}
+
+    .open-button svg {
+        width: 16px;
+        height: 16px;
+        fill: none;
+        path {
+    stroke: var(--gray);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke .3s ease-in-out;
+     }
+
+     }
+
+
+
+.blog-card--input:hover {
+    border-color: var(--dark-blue);
+}
+
+.blog-card--input:active,
+.blog-card--input:focus {
+    border-color: var(--dark-blue);
+    background: #f3fbff;
+}
+
+.blog-card--input-file {
+    position: relative;
+    display: inline-block;
+}
+
+    .blog-card--input-file span {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        outline: none;
+        box-sizing: border-box;
+        border: none;
+        margin: 0;
+    }
+
+        .blog-card--input-file span img {
+            padding: 0;
+        }
+
+.img--none {
+    visibility: collapse;
+    width: 100%;
+}
+
+
+.blog-card--input-file input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+    .blog-card__time__box,
+    .blog-card--input-file input[type=file] + span {
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        transition: box-shadow .3s ease-in-out, background .3s ease-in-out;
+    }
+
+
+    .blog-card--input-file input[type=file]:hover + span {
+        background: rgba(226, 227, 243, 0.708);
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.445);
+    }
+
+    .blog-card--input-file input[type=file]:focus + span {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.686);
+    }
+
+    .blog-card--input-file input[type=file]:active + span {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.785);
+    }
+
+.blog-card__textarea {
+    resize: none;
+}
+
+.blog-card__time__box input:hover {
+    color: var(--dark-blue);
+}
+
+    .blog-card__time__box input:hover ~ .open-button svg path {
+        stroke: var(--dark-blue);
+    }
+
+.img--none {
+    visibility: collapse;
+}

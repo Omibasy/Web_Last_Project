@@ -1,0 +1,222 @@
+﻿
+
+.main {
+    padding-top: 300px;
+}
+
+.main,
+footer {
+    transition: margin 0.3s linear;
+}
+
+.footer--active,
+.main--active {
+    margin-left: 300px;
+}
+
+    .main section .container {
+        min-height: 0;
+    }
+
+.header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: var(--dark-blue);
+    padding: 26px 40px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hero .container
+.projects .container {
+       min-height: 100vh;
+}
+
+.header__link,
+.header__span,
+.header__text {
+    font-weight: 400;
+    font-size: 25px;
+    color: var(--background-white);
+}
+
+.burger {
+    left: 1px;
+    position: relative;
+    width: 36px;
+    height: 18px;
+    margin-bottom: 4px;
+}
+
+.burger__span {
+    position: absolute;
+    left: 46%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 3px;
+    border-radius: 4px;
+    background-color: var(--background-white);
+    transition: background 0.3s linear;
+}
+
+    .burger__span:nth-child(1) {
+        top: 99%;
+    }
+
+    .burger__span:nth-child(2) {
+        top: 50%;
+        transform: translateX(-50%) translateY(-45%);
+    }
+
+    .burger__span:nth-child(3) {
+        bottom: 100%;
+    }
+
+.burger--active {
+    display: block;
+}
+
+    .burger--active .burger__span:nth-child(1) {
+        top: 72%;
+        left: 5px;
+        transform: translateX(-50%) rotate(45deg);
+        width: 50%;
+    }
+
+    .burger--active .burger__span:nth-child(3) {
+        bottom: 72%;
+        left: 5px;
+        transform: translateX(-50%) rotate(-45deg);
+        width: 50%;
+    }
+
+.header__span {
+    margin: 0 0 0 60px;
+}
+
+.header__text {
+    margin: 0 40px 0 20px;
+}
+
+.header__link {
+    display: block;
+    cursor: pointer;
+    padding: 20px 30px 20px 30px;
+    margin: 0 60px 0 auto;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--background-white);
+    box-sizing: border-box;
+    border-top: 2px solid rgba(255, 255, 255, .1);
+    border-bottom: 2px solid #163a64;
+    border-right: 2px solid #163a64;
+    border-left: 2px solid rgba(255, 255, 255, .1);
+    transition: background .3s ease-in-out, border-color .1s ease-in-out, padding .1s ease-in-out;
+}
+
+
+
+
+    .header__link:active,
+    .header__link:focus,
+    .header__link:hover {
+        background-color: #1e518d;
+    }
+
+    .header__link:active,
+    .header__link:focus {
+        border-bottom-color: rgba(255, 255, 255, .1);
+        border-top-color: #163a64;
+        border-left-color: #163a64;
+        border-right-color: rgba(255, 255, 255, .1);
+        padding: 22px 28px 18px 32px;
+    }
+
+.sidenav {
+    position: fixed;
+    overflow-x: hidden;
+    padding-top: 200px;
+    left: -300px;
+    height: 100%;
+    width: 300px;
+    z-index: 1;
+    background-color: var(--dark-blue);
+    transition: left 0.3s linear;
+}
+
+.sidenav--active {
+    left: 0;
+}
+
+
+.sidenav__link {
+    display: block;
+    padding: 20px 8px 20px 40px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--background-white);
+    box-sizing: border-box;
+    border-top: solid 1px rgba(255, 255, 255, .1);
+    border-bottom: 1px solid #163a64;
+}
+
+.sidenav__link--on {
+    transition: background .2s linear, padding .2s linear, border .2s linear
+}
+
+    .sidenav__item:hover .sidenav__link {
+        background-color: #1e518d;
+    }
+
+.sidenav__link--active,
+.sidenav__link:focus,
+.sidenav__link:active {
+    background-color: #1e518d;
+    border-bottom-color: rgba(255, 255, 255, .1);
+    border-top-color: #163a64;
+    padding: 22px 6px 18px 42px;
+}
+
+
+.moving-update {
+    padding-bottom: 200px;
+}
+
+    .moving-update .container {
+        border-top: 2px solid var(--dark-blue);
+        padding-bottom: 30px;
+        padding-top: 30px;
+        flex-direction: row-reverse;
+    }
+
+
+
+.button-moving-update {
+    background: #f76b0d;
+    display: block;
+    transition: background .3s ease-in-out, outline .3s ease-in-out;
+}
+
+    .button-moving-update:hover {
+        outline: none;
+        background: #f39909;
+    }
+
+    .button-moving-update:active {
+        outline: none;
+        background: #f73e10;
+    }
+
+    .button-moving-update:focus {
+        outline: 2px solid #f73e10;
+    }
+
+.moving-update__list {
+    display: flex;
+}
+
+.moving-update__list__item:nth-child(1) {
+    margin-right: 30px;
+}

@@ -1,0 +1,109 @@
+﻿:root {
+    --background-white: #fff;
+    --background-black: #212133;
+    --light-blue: #00b9fa;
+    --dark-blue: #164171;
+    --blue: #0780d5;
+    --bs-navbar-color: rgba(0, 0, 0, 0.55);
+    --gray: #c4c4c4;
+    --yellow: rgb(248, 88, 8);
+    --container-width: 1920px;
+    --width-list: 100%;
+}
+
+
+
+.services .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.services__titel {
+    margin-bottom: 50px
+}
+
+.services__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services__list__item {
+    width: 98%;
+    position: relative;
+    top: 0;
+    background: var(--blue);
+    border: 2px solid var(--blue);
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out, top 0.1s ease-in-out;
+}
+
+    .services__list__item:hover {
+        top: -5px;
+    }
+
+    .services__list__item:not(:nth-last-child(1)) {
+        margin-bottom: 25px;
+    }
+
+.services__button {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.arrow-bottom {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    fill: var(--background-white);
+    transform: rotate(90deg);
+    transition: fill 0.3s ease-out, transform 0s;
+}
+
+.services__span {
+    text-align: left;
+    font-weight: 700;
+    line-height: 32px;
+    font-size: 24px;
+    color: var(--background-white);
+    transition: color 0.3s ease-in-out;
+}
+
+.accordion__panel {
+    overflow: hidden;
+    visibility: hidden;
+    text-align: justify;
+    transition: visibility 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.services__panel__text {
+    margin: 0;
+    padding: 40px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--background-white);
+}
+
+.accordion--active {
+    background: var(--background-white);
+}
+
+    .accordion--active .accordion__trigger .arrow-bottom {
+        transform: rotate(-90deg);
+        fill: var(--blue);
+    }
+
+    .accordion--active .accordion__trigger .services__span {
+        color: var(--blue);
+    }
+
+    .accordion--active .accordion__panel {
+        visibility: visible;
+    }
+
+        .accordion--active .accordion__panel .services__panel__text {
+            color: var(--background-black);
+        }

@@ -1,0 +1,43 @@
+﻿@{
+   
+    Layout = "_layoutAdmin";
+    ViewData["title"] = "Заголовок";
+}
+
+
+<link rel="stylesheet" href="~/Layout/css/DemoStyle2.css">
+
+
+<section class="heading section">
+    <div class="container">
+        <a href="#" class="logo heading__logo">
+            <img src="~/Layout/img/@ViewBag.Container.Logo" alt="логотип кампании @ViewBag.Container.Data.CompanyName">
+        </a>
+        <nav class="heading__nav">
+            <ul class="heading__list list-reset">
+                @for (int i = 0; i < ViewBag.Container.Data.HeadingMenu.Length; i++)
+                    {
+                    <li class="heading__list__item">
+                        <a href="#" class="heading__link">
+                            @ViewBag.Container.Data.HeadingMenu[i]
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</section>
+<section class="bottom">
+    <div class="container">
+        <span class="bottom__span">
+            @ViewBag.Container.Data.Footer
+        </span>
+    </div>
+</section>
+<section class="moving-update heading-update">
+    <div class="container">
+        <a href="/Heading/Change" class="button-moving-update  link-btn">
+            Редактировать
+        </a>
+    </div>
+</section>

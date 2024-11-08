@@ -1,0 +1,16 @@
+﻿
+.projects__card__box-bottom {
+    bottom: -30%;
+    transition: bottom 0.3s ease-in-out;
+}
+
+
+
+.projects__link:hover .projects__card__box-bottom {
+    bottom: 0;
+}
+
+.projects__link:hover {
+    border-color: var(--gray);
+}
+

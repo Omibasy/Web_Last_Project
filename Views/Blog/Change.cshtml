@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "_layoutAdmin";
+    ViewData["title"] = "Изменение";
+}
+
+<link rel="stylesheet" href="~/General/css/StyleLayoutSumbit.css">
+<link rel="stylesheet" href="~/Projects/css/ControlStyle2.css">
+<link rel="stylesheet" href="~/Blog/css/BlogCardStyle8.css" />
+<link rel="stylesheet" href="~/Blog/css/EditableStyle1.css" />
+
+<form enctype="multipart/form-data" class="blog__form" id="Form-blog">
+    <section class="blog-card" id="blog-card">
+        <div class="container">
+            <label class="blog-card__label" for="textTitle">
+                <input id="textTitle" name="textTitle" class="blog-card__titel blog-card--input titel-lvl-two" type="text" value="@ViewBag.Blog.Data.Title">
+            </label>
+            <div class="blog-card__box">
+                <div class="blog-card__pic">
+                    <label for="DateCard" class="blog-card__label--date blog-card__time">
+                        <div class="blog-card__time__box">
+                            @{
+                                string str = ViewBag.Blog.Data.dateTime.ToString("yyyy-MM-dd");
+                            }
+                            <input type="date" name="DateCardEdit" id="DateCardEdit" value=@str>
+                            <span class="open-button">
+                                <button type="button" class="button-reset">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 21H6.2C5.0799 21 4.51984 21 4.09202 20.782C3.71569 20.5903 3.40973 20.2843 3.21799 19.908C3 19.4802 3 18.9201 3 17.8V8.2C3 7.0799 3 6.51984 3.21799 6.09202C3.40973 5.71569 3.71569 5.40973 4.09202 5.21799C4.51984 5 5.0799 5 6.2 5H17.8C18.9201 5 19.4802 5 19.908 5.21799C20.2843 5.40973 20.5903 5.71569 20.782 6.09202C21 6.51984 21 7.0799 21 8.2V10M7 3V5M17 3V5M3 9H21M13.5 13.0001L7 13M10 17.0001L7 17M14 21L16.025 20.595C16.2015 20.5597 16.2898 20.542 16.3721 20.5097C16.4452 20.4811 16.5147 20.4439 16.579 20.399C16.6516 20.3484 16.7152 20.2848 16.8426 20.1574L21 16C21.5523 15.4477 21.5523 14.5523 21 14C20.4477 13.4477 19.5523 13.4477 19 14L14.8426 18.1574C14.7152 18.2848 14.6516 18.3484 14.601 18.421C14.5561 18.4853 14.5189 18.5548 14.4903 18.6279C14.458 18.7102 14.4403 18.7985 14.405 18.975L14 21Z" />
+                                    </svg>
+                                </button>
+                            </span>
+                        </div>
+                    </label>
+                    <label for="file" class="blog-card--input-file">
+                        <input name="file" id="file" type="file" autocomplete="off" multiple="" onchange='ChangingImage(this)'>
+                        <span class="blog-card--input-file__btn">
+                            <img id="blah" src="~/Blog/img/@ViewBag.Blog.pictureUrl" alt="@ViewBag.Blog.Data.Alt" class="blog-card__img">
+                            <svg id="plus" class="span__svg-castom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 16 16">
+                                <path d="m24,48c-13.254,0-24-10.746-24-24s10.746-24 24-24 24,10.746 24,24-10.746,24-24,24zm0-42c-9.939,0-18,8.061-18,18s8.061,18 18,18 18-8.061 18-18-8.061-18-18-18zm9,21h-6v6c0,1.659-1.341,3-3,3-1.656,0-3-1.341-3-3v-6h-6c-1.656,0-3-1.341-3-3 0-1.656 1.344-3 3-3h6v-6c0-1.656 1.344-3 3-3 1.659,0 3,1.344 3,3v6h6c1.659,0 3,1.344 3,3 0,1.659-1.341,3-3,3z" />
+                            </svg>
+                        </span>
+                    </label>
+                </div>
+                <label for="textDescrit" class="blog-card__box-right ">
+                    <textarea name="textDescrit" class="blog-card--input blog-card__textarea" rows="30" id="textDescrit">
+@ViewBag.Blog.Data.Description
+                        </textarea>
+                </label>
+            </div>
+        </div>
+    </section>
+    <section class="layout-submit moving-update">
+        <div class="container">
+            <a asp-controller="Blog" asp-action="Editable" class="button-moving-update link-btn">
+                Отмена
+            </a>
+            <button type="submit" class="button-moving-update link-btn form-layout__btn">
+                Изменить
+            </button>
+        </div>
+    </section>
+</form>
+
+<script src="~/General/libs/JustValidate/just-validate.production.min.js"></script>
+<script src="~/General/libs/JustValidate/just-validate-plugin-date.production.min.js"></script>
+<script src="~/General/libs/jquery.min.js"></script>
+<script src="~/Blog/js/ScriptEdit4.js"></script>

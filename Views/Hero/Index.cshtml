@@ -1,0 +1,62 @@
+﻿
+
+<link rel="stylesheet" href="~/Hero/libs/swiper-bundle.min.css">
+<link rel="stylesheet" href="~/Hero/css/Style1.css">
+
+
+
+<section class="hero section" id="hero">
+    <div class="container">
+        <div class="hero__box">
+            <h1 class="hero__titel">
+                @ViewBag.Hero.Data.Title
+            </h1>
+            <ul class="hero__list list-reset">
+                @for (int i = 0; i < @ViewBag.Hero.Data.Slogans.Length; i++)
+                {
+                    <li class="hero__list__item">
+                        @if (i == 0)
+                        {
+                            <p class="hero__text visibility-text-slide">
+                                @ViewBag.Hero.Data.Slogans[i]
+                            </p>
+                        }
+                        else
+                        {
+                            <p class="hero__text">
+                                @ViewBag.Hero.Data.Slogans[i]
+                            </p>
+                        }
+                    </li>
+                }
+            </ul>
+            <a href="#application" class="hero__link link-btn">
+                @ViewBag.Hero.Data.BtnText
+            </a>
+        </div>
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+                @for (int i = 0; i < @ViewBag.Hero.Data.Slogans.Length; i++)
+                {
+                    <div class="swiper-slide">
+                        <img class="hero__img" src="~/Hero/img/slides-img/@ViewBag.Hero.SwiperSlidesPath[i]" alt="@ViewBag.Hero.Data.Slogans[i]">
+                    </div>
+                }
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<script src="~/Hero/libs/swiper-bundle.min.js"></script>
+<script src="~/Hero/js/script5.js"></script>
+
+
+
+

@@ -1,0 +1,57 @@
+﻿@{
+    if (ChackAdmin.Chack)
+    {
+        Layout = "_layoutAdmin";
+
+        ViewData["title"] = @ViewBag.Container.Data.HeadingMenu[2];
+    }
+  
+}
+
+
+<link rel="stylesheet" href="~/General/libs/accordion/accordion.min.css"/>
+<link rel="stylesheet" href="~/Services/css/Style2.css"/>
+
+
+<section class="services section" id="services">
+    <div class="container">
+        <h2 class="services__titel titel-lvl-two">
+            Что мы&nbsp;можем сделать
+        </h2>
+        <ul class="services__list accordion-list list-reset">
+            @foreach (var item in ViewBag.Services.ServicesPage)
+            {
+                <li class="services__list__item accordion">
+                    <button class="services__button accordion__trigger button-reset">
+                        <svg class="arrow-bottom" viewBox="0 0 9 14">
+                            <path class="svg-arrow"
+                                  d="M6.660,8.922 L6.660,8.922 L2.350,13.408 L0.503,11.486 L4.813,7.000 L0.503,2.515 L2.350,0.592 L8.507,7.000 L6.660,8.922 Z" />
+                        </svg>
+                        <span class="services__span">
+                            @item.Data.Title
+                        </span>
+                    </button>
+                    <div class="servisec__panel accordion__panel">
+                        <p class="services__panel__text">
+                            @item.Data.Description
+                        </p>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</section>
+
+@if (ChackAdmin.Chack)
+{
+    <section class="moving-update">
+        <div class="container">
+            <a asp-controller="Services" asp-action="Change" class="button-moving-update  link-btn button-reset">
+                Редактировать
+            </a>
+        </div>
+    </section>
+}
+
+<script src="~/General/libs/accordion/accordion.min.js"></script>
+<script src="~/Services/js/script.js"></script>

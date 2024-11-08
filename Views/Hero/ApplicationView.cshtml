@@ -1,0 +1,52 @@
+﻿<section class="application" id="application">
+    <div class="container">
+        <h2 class="application__tittel titel-lvl-two">
+            @ViewBag.Hero.Data.TitleForm
+        </h2>
+        <form action="#" class="application__form" id="SendForm">
+            <labal class="application__label application__label--left" for="Name">
+                <span class="application__span">
+                    введите @ViewBag.Hero.Data.PlaceholderName
+                </span>
+                <input type="text" id="Name" class="application__input-text" placeholder="@ViewBag.Hero.Data.PlaceholderName">
+            </labal>
+            <labal class="application__label application__label--right" for="Email">
+                <span class="application__span">
+                    введите @ViewBag.Hero.Data.PlaceholderE_mail
+                </span>
+                <input type="email" id="Email" class="application__input-text" placeholder="@ViewBag.Hero.Data.PlaceholderE_mail">
+            </labal>
+            <labal class="application__label" for="Text">
+                <span class="application__span">
+                    введите @ViewBag.Hero.Data.PlaceholderTextArea
+                </span>
+                <textarea name="" id="Text" cols="30" rows="10" class="application__textarea"
+                          placeholder="@ViewBag.Hero.Data.PlaceholderTextArea"></textarea>
+            </labal>
+            <button class="application__button button-reset link-btn">
+                @ViewBag.Hero.Data.BtnForm
+            </button>
+        </form>
+
+    </div>
+</section>
+
+@if (ChackAdmin.Chack)
+{
+    <section class="moving-update">
+        <div class="container">
+            <ul class="list-reset moving-update__list">
+                <li class="moving-update__list__item">
+                    <a asp-controller="Hero" asp-action="Add" class="button-moving-update  link-btn">
+                        Добавить слайд
+                    </a>
+                </li>
+                <li class="moving-update__list__item">
+                    <a asp-controller="Hero" asp-action="Update" class="button-moving-update  link-btn">
+                        Редактировать
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+}

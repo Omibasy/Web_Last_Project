@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/General/css/normalize.css">
+    <link rel="stylesheet" href="~/General/css/Style8.css">
+    <link rel="stylesheet" href="~/Layout/css/adminStyle1.css">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <button aria-label="Меню навигации" class="burger burger--active  header__burger button-reset">
+            <span class="burger__span"></span>
+            <span class="burger__span"></span>
+            <span class="burger__span"></span>
+        </button>
+        <span class="header__span">
+            Admin:
+        </span>
+        <p class="header__text">
+            Adfwewefwefwe
+        </p>
+        <a href="/Home/Admin" class="header__link">
+            Выход
+        </a>
+    </header>
+    <nav class="sidenav sidenav--active" id="mainNav">
+        <ul class="sidenav__list list-reset">
+            <li class="sidenav__item">
+                <a class="sidenav__link "   href="#">РАБОЧИЙ СТОЛ</a>
+            </li>
+            <li class="sidenav__item">                            
+                @if (ViewBag.MenuSelect == "heading")
+                {
+                    <a class="sidenav__link sidenav__link--active" asp-controller="Heading" asp-action="Index">ЗАГОЛОВОК</a>
+                }
+                else
+                {
+                    <a class="sidenav__link" asp-controller="Heading" asp-action="Index">ЗАГОЛОВОК</a>
+                }
+            </li>
+            <li class="sidenav__item">
+                @if (ViewBag.MenuSelect == "hero")
+                {
+                    <a class="sidenav__link sidenav__link--active" asp-controller="Hero" asp-action="IndexAdmin">
+                        @ViewBag.Container.Data.HeadingMenu[0]
+                    </a>
+                }
+                else
+                {
+                    <a class="sidenav__link" asp-controller="Hero" asp-action="IndexAdmin">
+                        @ViewBag.Container.Data.HeadingMenu[0]
+                    </a>
+                }
+            </li>
+            <li class="sidenav__item"> 
+                @if (ViewBag.MenuSelect == "project")
+                {
+                    <a class="sidenav__link sidenav__link--active" asp-controller="Projects" asp-action="Index">
+                        @ViewBag.Container.Data.HeadingMenu[1]
+                    </a>
+                }
+                else
+                {
+                    <a class="sidenav__link" asp-controller="Projects" asp-action="Index">
+                        @ViewBag.Container.Data.HeadingMenu[1]
+                    </a>
+                }
+            </li>
+            <li class="sidenav__item">       
+                @if (ViewBag.MenuSelect == "services")
+                {
+                    <a class="sidenav__link sidenav__link--active" asp-controller="Services" asp-action="Index">
+                        @ViewBag.Container.Data.HeadingMenu[2]
+                    </a>
+                }
+                else
+                {
+                    <a class="sidenav__link" asp-controller="Services" asp-action="Index">
+                        @ViewBag.Container.Data.HeadingMenu[2]
+                    </a>
+                }
+            </li>
+            <li class="sidenav__item"> 
+                @if (ViewBag.MenuSelect == "blog")
+                {
+                    <a class="sidenav__link sidenav__link--active" asp-controller="Blog" asp-action="Index">
+                        @ViewBag.Container.Data.HeadingMenu[3]
+                    </a>
+                }
+                else
+                {
+                    <a class="sidenav__link" asp-controller="Blog" asp-action="Index">
+                        @ViewBag.Container.Data.HeadingMenu[3]
+                    </a>
+                }
+            </li>
+            <li class="sidenav__item">
+                @if (ViewBag.MenuSelect == "contacts")
+                {
+                    <a class="sidenav__link sidenav__link--active" asp-controller="Contacts" asp-action="Index">
+                        @ViewBag.Container.Data.HeadingMenu[4]
+                    </a>
+                }
+                else
+                {
+                    <a class="sidenav__link" asp-controller="Contacts" asp-action="Index">
+                        @ViewBag.Container.Data.HeadingMenu[4]
+                    </a>
+                }
+            </li>
+        </ul>
+    </nav>
+    <main class="main main--active">
+        @RenderBody()
+    </main>
+
+
+    <script src="~/Layout/js/AdminScript6.js"></script>
+</body>
+</html>

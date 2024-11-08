@@ -1,0 +1,39 @@
+﻿@{
+    if (ChackAdmin.Chack)
+    {
+        Layout = "_layoutAdmin";
+    }
+    else
+    {
+        Layout = "_layout";
+
+    }
+    ViewData["title"] = @ViewBag.Container.Data.HeadingMenu[1];
+}
+
+<link rel="stylesheet" href="~/Projects/css/ProjectsCardStyle1.css" />
+
+<section class="projects-card section projects" id="projects-card projects">
+    <div class="container">
+        <div class="projects-card__box-header">
+            <h2 class="projects-card__title  titel-lvl-two">
+                @ViewBag.CardData.Data.Title
+            </h2>
+            <img src="~/Projects/img/@ViewBag.CardData.pictureUrl" class="projects-card__img" alt="@ViewBag.CardData.Data.Alt">
+        </div>
+        <div class="projects-card__box-main">
+            <p class="projects-card__text" style="white-space: pre-wrap;">@ViewBag.CardData.Data.Description</p>
+        </div>
+    </div>
+</section>
+@if (ChackAdmin.Chack)
+{
+    <section class="moving-update">
+        <div class="container">
+            <a asp-controller="Projects" asp-action="Index" class="button-moving-update  link-btn">
+                 Назад
+             </a>          
+        </div>
+    </section>
+}
+

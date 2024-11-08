@@ -1,0 +1,127 @@
+﻿:root {
+    --background-white: #fff;
+    --background-black: #212133;
+    --light-blue: #00b9fa;
+    --dark-blue: #164171;
+    --blue: #0780d5;
+    --bs-navbar-color: rgba(0, 0, 0, 0.55);
+    --gray: #c4c4c4;
+    --yellow: rgb(248, 88, 8);
+    --container-width: 1920px;
+    --width-list: 100%;
+}
+
+
+.contacts .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-height: 100vh;
+}
+
+.contacts__box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts__item {
+    display: flex;
+}
+
+    .contacts__item:not(:nth-last-child(1)) {
+        margin-bottom: 20px;
+    }
+
+.contacts__span {
+    margin-right: 20px;
+}
+
+.contacts__text {
+    margin: 0;
+}
+
+.map-yandex {
+    width: 100%;
+    height: 100%;
+}
+
+.contains__box-right,
+.contacts__box-left {
+    min-height: 500px;
+}
+
+.contains__box-right {
+    width: 50%;
+}
+
+.contacts__item {
+    display: flex;
+    justify-content: center;
+}
+
+    .contacts__item:nth-last-child(1) {
+        align-items: center;
+        flex-direction: column;
+    }
+
+        .contacts__item:nth-last-child(1) .contacts__span {
+            margin-bottom: 20px;
+        }
+
+.contacts__span,
+.contacts__text {
+    text-align: center;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--background-black);
+}
+
+[class*="copyrights-pane"] {
+    display: none !important;
+}
+
+.contacts__box-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.contacts__list {
+    padding: 20% 10%;
+}
+
+.contacts__list-links {
+    display: flex;
+    justify-content: center;
+}
+
+.contacts__list-links__item:not(:nth-last-child(1)) {
+    margin-right: 20px;
+}
+
+.contacts__link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    transition: background 0.1s ease-in-out;
+}
+
+.contacts__svg {
+    fill: var(--blue);
+    width: 40px;
+    height: 40px;
+}
+
+.contacts__link:hover {
+    background-color: #e4e8ee;
+}
+
+.contacts__link:focus {
+    background-color: #d4d6df;
+}
+
+.contacts__link:active {
+    background-color: #c7c9d2;
+}

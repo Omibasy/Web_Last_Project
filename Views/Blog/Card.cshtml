@@ -1,0 +1,45 @@
+﻿@{
+    if (ChackAdmin.Chack)
+    {
+        Layout = "_layoutAdmin";
+    }
+    else
+    {
+        Layout = "_layout";
+
+    }
+    ViewData["title"] = ViewBag.Blog.Data.Title;
+}
+
+
+<link rel="stylesheet" href="~/Blog/css/BlogCardStyle8.css"/>
+
+
+<section class="blog-card section" id="blog-card">
+    <div class="container">
+        <h2 class="blog-card__titel titel-lvl-two">
+            @ViewBag.Blog.Data.Title
+        </h2>
+        <div class="blog-card__box">
+            <figure class="blog-card__pic">
+                <time  class="blog-card__time"> 
+                    @ViewBag.Blog.Data.dateTime.ToString("d MMMMMMMMMM yyyy", System.Globalization.CultureInfo.GetCultureInfo("RU-ru"))
+                </time>
+                <img src="~/Blog/img/@ViewBag.Blog.pictureUrl" alt="@ViewBag.Blog.Data.Alt" class="blog-card__img">
+            </figure>
+            <div class="blog-card__box-right">
+                @Html.Raw(ViewBag.Blog.Data.Description)
+            </div>
+        </div>
+    </div>
+</section>
+@if (ChackAdmin.Chack)
+{
+    <section class="moving-update">
+        <div class="container">
+            <a asp-controller="Blog" asp-action="Index" class="button-moving-update  link-btn">
+                Назад
+            </a>
+        </div>
+    </section>
+}

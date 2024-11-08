@@ -1,0 +1,213 @@
+﻿
+
+.projects .container {
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+
+.projects__box--top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.form__projects__label {
+    position: relative;
+}
+
+.labal--img {
+    position: relative;
+    width: 25%;
+}
+
+.input-file-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: none;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.labal--img input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+
+    .labal--img input[type=file] + span {
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        transition: box-shadow .3s ease-in-out;
+    }
+
+        .labal--img input[type=file] + span svg {
+            position: absolute;
+            fill: rgba(0,123,255,.25);
+            width: 20%;
+            transition: fill .3s ease-in-out;
+        }
+
+    .labal--img input[type=file]:hover + span {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.952);
+    }
+
+        .labal--img input[type=file]:hover + span svg {
+            fill: rgba(0, 123, 255, 0.952);
+        }
+
+    .labal--img input[type=file]:active + span {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.952);
+    }
+
+        .labal--img input[type=file]:active + span svg {
+            fill: rgba(0, 123, 255, 0.952);
+        }
+
+
+
+.labal--alt-img {
+    display: flex;
+    flex-direction: column;
+    width: 73%;
+}
+
+.form__projects__img {
+    position: relative;
+    z-index: 100;
+}
+
+
+.labal--title,
+.labal--descrit {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.labal--title {
+    margin-bottom: 30px;
+}
+
+.input--descrit {
+    resize: none;
+}
+
+
+
+.form__projects__input,
+.form__projects__text {
+    font-size: 36px;
+    line-height: 36px;
+}
+
+.form__projects__text {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.form__projects__input {
+    background: #eef2f4;
+    border: 2px solid var(--gray);
+    outline: none;
+    border-radius: 20px;
+    padding: 30px 32px;
+    color: var(--background-black);
+    font-weight: 400;
+}
+
+.input--text {
+    transition: border-color .3s ease-in-out, background-color .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+    .input--text:hover {
+        border-color: var(--background-black);
+    }
+
+    .input--text:focus,
+    .input--text:active {
+        border-color: var(--background-black);
+        background-color: #f3fbff;
+    }
+
+.img--none {
+    visibility: collapse;
+}
+
+.just-validate-error-label {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    font-size: 20px;
+}
+
+.form__projects__label:has(.just-validate-error-label) {
+> .input--text {
+    opacity: 0.4;
+    border-color: red;
+}
+
+> .input--text:hover,
+.input--text:active,
+.input--text:focus {
+    opacity: 1;
+}
+
+}
+
+.labal--img:has(.just-validate-error-label) {
+> input[type=file]+span {
+    box-shadow: 0 0 0 0.2rem red;
+}
+
+> .form__projects__text {
+    visibility: hidden;
+}
+
+} 
+
+.labal--img .just-validate-error-label {
+    top: 0;
+    left: 0;
+}
+
+.layout-submit {
+    width: 100%;
+    box-shadow: 0px 20px 80px rgba(0, 0, 0, 0.1);
+    padding-bottom: 300px;
+}
+
+
+    .layout-submit .container {
+        flex-direction: row;
+        justify-content: space-between;
+        background: none;
+    }
+
+.form-layout__btn {
+    border: none;
+}
+
+.layout-submit {
+    box-shadow: none;
+}
+
+    .layout-submit .container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-top: 1px solid black;
+        background: #fff;
+    }

@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "_layoutAdmin";
+    ViewData["title"] = "Редактирование заголовока";
+}
+
+
+<link rel="stylesheet" href="~/Layout/css/StyleUpdate2.css">
+
+<form class="form-layout" name="Form_Layout" enctype="multipart/form-data" id="Form_Layout"
+      action="HeadingUpdateSet">
+    <section class="layout-header section">
+        <div class="container">
+            <label class="top-label" for="Name">
+                <span class="layout-header__span">
+                    Название компаниии:
+                </span>
+                <input type="text" name="Name" id="Name" value="@ViewBag.Container.Data.CompanyName" class="top-label__input">
+            </label>
+        </div>
+        <div class="container">
+            <div class="logo layout-header__logo">
+                <label class="input-file" for="file">
+                    <input type="file" name="file" id="file"  onchange='ChangingImage(this)'>
+                    <span class="input-file-btn">
+                        <img id="blah" src="~/Layout/img/@ViewBag.Container.Logo" alt="логотип кампании @ViewBag.Container.Data.CompanyName">
+                    </span>
+                </label>
+            </div>
+            <nav class="layout-header__nav">
+                <ul class="layout-header__list list-reset">
+                    @for (int i = 0; i < ViewBag.Container.Data.HeadingMenu.Length; i++)
+                    {
+                        <li class="layout-header__list__item">
+                            <label class="layout-header__label" for="Menu-@i">
+                                <input type="text" name="Menu" id="Menu-@i" value="@ViewBag.Container.Data.HeadingMenu[i]" class="layout-header__input">
+                            </label>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <section class="layout-footer">
+        <div class="container">
+            <label class="layout-footer__label" for="Footer">
+                <input type="text" name="Footer" id="Footer" value="@ViewBag.Container.Data.Footer" class="layout-footer__input">
+            </label>
+        </div>
+    </section>
+    <section class="layout-submit">
+        <div class="container">
+            <a asp-controller="Heading" asp-action="Index" class="button-moving-update link-btn">
+                Отмена
+            </a>
+            <input value="Изменить" type="submit" class="button-moving-update link-btn form-layout__btn">
+        </div>
+    </section>
+</form>
+<script src="~/General/libs/JustValidate/just-validate.production.min.js"></script>
+<script src="~/General/libs/jquery.min.js"></script>
+<script src="~/Layout/js/Update.js"></script>

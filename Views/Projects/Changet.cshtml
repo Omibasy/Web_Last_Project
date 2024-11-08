@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "_layoutAdmin";
+    ViewData["title"] = "Изменение";
+}
+
+<link rel="stylesheet" href="~/General/css/StyleLayoutSumbit.css">
+<link rel="stylesheet" href="~/Projects/css/CardChangetStyle2.css">
+
+<form enctype="multipart/form-data" class="form--projets" id="Form-projets">
+    <section class="projects-card section" id="project">
+        <div class="container">
+            <div class="projects-card__box-header">
+                <label for="textTitle" class="projects-card__label">
+                    <input type="text" id="textTitle" name="textTitle" class="projects-card__title  titel-lvl-two projects-card--input" value="@ViewBag.Card.Data.Title" />
+                </label>
+                <label for="file" class="projects-card--input-file">
+                    <input type="file" name="file" id="file" autocomplete="off" multiple="" onchange='ChangingImage(this)'>
+                    <span class="projects-card--input-file-btn">
+                        <img id="blah" src="~/Projects/img/@ViewBag.Card.pictureUrl" alt="@(ViewBag.Card.Data.Alt + "*" + ViewBag.CardID)">
+                    </span>
+                </label>
+            </div>
+            <label for="textDescrit" class="projects-card__box-main">
+                <textarea rows="20" id="textDescrit" name="textDescrit" class="projects-card__text projects-card--input">@ViewBag.Card.Data.Description</textarea>
+            </label>
+        </div>
+    </section>
+    <section class="layout-submit moving-update">
+        <div class="container">
+            <a asp-controller="Projects" asp-action="Editable" class="button-moving-update link-btn">
+                Отмена
+            </a>
+            <button type="submit" class="button-moving-update link-btn form-layout__btn">
+                Изменить
+            </button>
+        </div>
+    </section>
+</form>
+
+<script src="~/General/libs/JustValidate/just-validate.production.min.js"></script>
+<script src="~/General/libs/jquery.min.js"></script>
+<script src="~/Projects/js/CardChangetScript5.js"></script>
+

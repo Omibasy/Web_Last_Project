@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "_layout";
+    ViewData["Title"] = @ViewBag.Hero.Data.Title;   
+
+    await Html.RenderPartialAsync("~/Views/Hero/Index.cshtml");
+    await Html.RenderPartialAsync("~/Views/Projects/Index.cshtml");
+    await Html.RenderPartialAsync("~/Views/Services/Index.cshtml");
+    await Html.RenderPartialAsync("~/Views/Blog/Index.cshtml");
+    await Html.RenderPartialAsync("~/Views/Contacts/Index.cshtml");
+    await Html.RenderPartialAsync("~/Views/Hero/ApplicationView.cshtml");
+
+}
+

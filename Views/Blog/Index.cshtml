@@ -1,0 +1,89 @@
+﻿@{
+    if (ChackAdmin.Chack)
+    {
+        Layout = "_layoutAdmin";
+
+        ViewData["title"] = @ViewBag.Container.Data.HeadingMenu[3];
+    }
+
+
+}
+
+
+<link rel="stylesheet" href="~/Blog/css/Style3.css"/>
+
+<section class="blog section" id="blog">
+    <div class="container">
+        <h2 class="blog__titel titel-lvl-two">
+            @ViewBag.Container.Data.HeadingMenu[3]
+        </h2>
+        <ul class="blog__list list-reset">
+            @for (int i = 0; i < ViewBag.Blog.Length; i++)
+            {
+                <li class="blog__card">
+                    <a href="~/Blog/Card?id=@i" class="blog__link">
+                        <time class="blog__card__time" datetime="@ViewBag.Blog[i].Data.dateTime">
+                            @ViewBag.Blog[i].Data.dateTime.ToString("d MMMMMMMMMM yyyy", System.Globalization.CultureInfo.GetCultureInfo("RU-ru"))
+                        </time>
+                        <img src="~/Blog/img/@ViewBag.Blog[i].pictureUrl" alt="@ViewBag.Blog[i].Data.Alt" class="blog__card__img">
+                        <div class="blog__card__box">
+                                <h3 class="blog__card__titel">
+                                    @ViewBag.Blog[i].Data.Title
+                                </h3>
+                                <p class="blog__card__text">
+                                @{
+                                    int idStr = 285;
+                                    string str = string.Empty;
+
+                                    if (ViewBag.Blog[i].Data.Description.Length < idStr)
+                                    {
+                                        str = ViewBag.Blog[i].Data.Description;
+                                    }
+                                    else
+                                    {
+
+                                        str = ViewBag.Blog[i].Data.Description.Substring(0, idStr);
+
+                                        while (true)
+                                        {
+                                          var a =  str[str.Length - 1];
+                                            if (str[str.Length - 1] != ' ' && str[str.Length - 1] != '\r' && str[str.Length - 1] != '\n' && ViewBag.Blog[i].Data.Description.Length > idStr)
+                                            {
+                                                str += ViewBag.Blog[i].Data.Description[idStr];
+                                                idStr++;
+                                            }
+                                            else
+                                            {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                                @Html.Raw(str)
+                                </p>
+                                    <div class="blog__box">
+                                        <i>
+                                            Подробнее
+                                        </i>
+                                        <div class="right-arrow">
+                                        </div>
+                                    </div>                            
+                            </div>
+                    </a>
+                </li>
+            }
+    </ul>
+    </div>
+</section>
+
+    @if (ChackAdmin.Chack)
+    {
+    <section class="moving-update">
+        <div class="container">
+            <a asp-controller="Blog" asp-action="Editable" class="button-moving-update  link-btn button-reset">
+                Редактировать
+            </a>
+        </div>
+    </section>
+    }
+

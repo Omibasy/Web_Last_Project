@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "_layoutAdmin";
+    ViewData["title"] = "Добовление слайда";
+}
+
+<link rel="stylesheet" href="~/Hero/css/AddStyle2.css">
+
+<form enctype="multipart/form-data" id="Form_HeroAddSlide" class="form__hero-add">
+    <section class="hero section" id="hero">
+        <div class="container">
+            <label for="text-slider" class="hero__label--top">
+                <span class="hero__label__span hero__label__span--top">
+                    Cлоган слайда:
+                </span>
+                <input type="text" id="text-slider" class="hero__label--top__text" name="TextSlider">
+            </label>
+            <label for="file_hero_add" class="hero__label--bottom">
+                <span class="hero__label__span">
+                    Фон слайда:
+                </span>
+                <input id="file_hero_add" name="FileSlider" type="file" onchange="ChangingImage(this)">
+                <span class="hero__label__span--bottom">
+                    <img id="blah" class="hero__slider-img img--none" alt="картинка на фон слайда">
+                    <svg id="span__svg-castom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 16 16">
+                        <path d="m24,48c-13.254,0-24-10.746-24-24s10.746-24 24-24 24,10.746 24,24-10.746,24-24,24zm0-42c-9.939,0-18,8.061-18,18s8.061,18 18,18 18-8.061 18-18-8.061-18-18-18zm9,21h-6v6c0,1.659-1.341,3-3,3-1.656,0-3-1.341-3-3v-6h-6c-1.656,0-3-1.341-3-3 0-1.656 1.344-3 3-3h6v-6c0-1.656 1.344-3 3-3 1.659,0 3,1.344 3,3v6h6c1.659,0 3,1.344 3,3 0,1.659-1.341,3-3,3z" />
+                    </svg>
+                </span>
+            </label>
+        </div>
+    </section>
+    <section class="layout-submit moving-update">
+        <div class="container">
+            <a asp-controller="Hero" asp-action="IndexAdmin" class="button-moving-update link-btn">
+                Отмена
+            </a>
+            <button type="submit" class="button-moving-update link-btn form-layout__btn">
+                Применить
+            </button>
+        </div>
+    </section>
+</form>
+<script src="~/General/libs/JustValidate/just-validate.production.min.js"></script>
+<script src="~/General/libs/jquery.min.js"></script>
+<script src="~/Hero/js/AddScript4.js"></script>

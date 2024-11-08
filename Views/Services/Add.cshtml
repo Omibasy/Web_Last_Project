@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "_layoutAdmin";
+    ViewData["title"] = "Добовление";
+}
+
+<link rel="stylesheet" href="~/General/css/StyleLayoutSumbit.css">
+<link rel="stylesheet" href="~/Services/css/StyleAdd3.css">
+
+<form class="form--services" id="Form-services" method="post">
+    <section class="services section" id="services">
+        <div class="container">
+            <label for="textTitle" class="form__services__label labal--title">
+                <span class="form__services__text">
+                    Заголовок:
+                </span>
+                <input type="text" id="textTitle" value="@ViewBag.ServicesItem.Title" name="textTitle" class="form__services__input input--text input--title">
+            </label>
+            <label for="textDescrit" class="form__services__label labal--descrit">
+                <span class="form__services__text">
+                    Текст:
+                </span>
+                <textarea rows="25" id="textDescrit" name="textDescrit" 
+                          class="form__services__input input--text input--descrit">@ViewBag.ServicesItem.Description</textarea>
+            </label>
+        </div>
+    </section>
+    <section class="layout-submit moving-update">
+        <div class="container">
+            <a asp-controller="Services" asp-action="Change" class="button-moving-update link-btn">
+                Назад
+            </a>
+            <button type="submit" class="button-moving-update link-btn button-reset">
+                Добавить
+            </button>
+        </div>
+    </section>
+</form>
+
+<script src="~/General/libs/JustValidate/just-validate.production.min.js"></script>
+<script src="~/General/libs/jquery.min.js"></script>
+<script src="~/Services/js/ScriptAdd2.js"></script>
+
+@if (ViewBag.ServicesItem.Title == string.Empty || ViewBag.ServicesItem.Title == null)
+{
+    <script src="~/Services/js/ScriptPost2.js"></script>
+}
+else
+{
+    <script src="~/Services/js/ScriptPut4.js"></script>
+}

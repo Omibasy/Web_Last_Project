@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "_layoutAdmin";
+    ViewData["title"] = "Добовление";
+}
+
+<link rel="stylesheet" href="~/Projects/css/ControlStyle2.css">
+<link rel="stylesheet" href="~/Blog/css/StyleAdd2.css">
+
+<form enctype="multipart/form-data" class="form--projets" id="Form-projets">
+    <section class="blog section" id="blog">
+        <div class="container">
+            <label for="DateCard" class="form__projects__label labal--date">
+                <span class="form__projects__text">
+                    Дата карточки
+                </span>
+                <input class="input--text form__projects__input input--date" id="DateCard" name="DateCard" type="date">
+            </label>
+            <div class="projects__box--top">
+                <label for="file" class="form__projects__label labal--img">
+                    <span class="form__projects__text">
+                        Картинка:
+                    </span>
+                    <input type="file" id="file" name="file" autocomplete="off" multiple="" onchange="ChangingImage(this)" class="form__projects__input input--img">
+                    <span class="input-file-btn">
+                        <img id="blah" class="form__projects__img img--none" alt="картинка для карточки">
+                        <svg id="plus" class="span__svg-castom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 16 16">
+                            <path d="m24,48c-13.254,0-24-10.746-24-24s10.746-24 24-24 24,10.746 24,24-10.746,24-24,24zm0-42c-9.939,0-18,8.061-18,18s8.061,18 18,18 18-8.061 18-18-8.061-18-18-18zm9,21h-6v6c0,1.659-1.341,3-3,3-1.656,0-3-1.341-3-3v-6h-6c-1.656,0-3-1.341-3-3 0-1.656 1.344-3 3-3h6v-6c0-1.656 1.344-3 3-3 1.659,0 3,1.344 3,3v6h6c1.659,0 3,1.344 3,3 0,1.659-1.341,3-3,3z" />
+                        </svg>
+                    </span>
+                </label>
+                <label for="textAlt" class="form__projects__label labal--alt-img">
+                    <span class="form__projects__text">
+                        Пояснения к картинке:
+                    </span>
+                    <input type="text" id="textAlt" name="textAlt" class="form__projects__input input--text">
+                </label>
+            </div>
+            <label for="textTitle" class="form__projects__label labal--title">
+                <span class="form__projects__text">
+                    Заголовок карточки:
+                </span>
+                <input type="text" id="textTitle" name="textTitle" class="form__projects__input input--text input--title">
+            </label>
+            <label for="textDescrit" class="form__projects__label labal--descrit">
+                <span class="form__projects__text">
+                    Текст карточки:
+                </span>
+                <textarea rows="25" id="textDescrit" name="textDescrit"
+                          class="form__projects__input input--text input--descrit"></textarea>
+            </label>
+        </div>
+    </section>
+    <section class="layout-submit">
+        <div class="container">
+            <a asp-controller="Blog" asp-action="Editable" class="button-moving-update link-btn">
+                Отмена
+            </a>
+            <button type="submit" class="button-moving-update link-btn form-layout__btn">
+                Применить
+            </button>
+        </div>
+    </section>
+</form>
+
+<script src="~/General/libs/JustValidate/just-validate.production.min.js"></script>
+<script src="~/General/libs/JustValidate/just-validate-plugin-date.production.min.js"></script>
+<script src="~/General/libs/jquery.min.js"></script>
+<script src="~/Projects/js/ControlScript7.js"></script>
+<script src="~/Blog/js/ScriptAdd9.js"></script>

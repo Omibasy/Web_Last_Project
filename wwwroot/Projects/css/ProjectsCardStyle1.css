@@ -1,0 +1,44 @@
+﻿
+.projects-card {
+    padding-top: 75px;
+}
+
+.projects-card .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-height: 120vh;
+}
+
+.projects-card__box-header {
+    display: flex;
+    border-bottom: 1px solid var(--bs-navbar-color);
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+}
+
+.projects-card__title {
+    line-height: 48px;
+    border: none;
+}
+
+.projects-card__img {
+    padding-top: 10px;
+    width: 160px;
+    height: 60px;
+}
+
+.projects-card__box-main {
+    display: flex;
+    flex-direction: column;
+    padding-right: 180px;
+}
+
+
+.projects-card__text {
+    text-align: justify;
+    margin: 0 0 30px 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+}
+

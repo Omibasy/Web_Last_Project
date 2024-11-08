@@ -1,0 +1,117 @@
+﻿.blog .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.blog__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 2.6%;
+}
+
+.blog__card {
+    position: relative;
+    width: 23%;
+    margin-top: 55px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 4px 8px 24px 14px rgba(0, 0, 0, .08);
+}
+
+
+.blog__card__time {
+    display: block;
+    font-size: 14px;
+    color: var(--background-white);
+    border-radius: 10px 10px 0 0;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    background: var(--dark-blue);
+    transition: background 0.3s ease-in-out;
+}
+
+.blog__card__img {
+    display: block;
+    height: 200px;
+    width: 100%;
+}
+
+.blog__card__box {
+    padding: 20px;
+    background: var(--background-white);
+}
+
+.blog__card__titel {
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.blog__card__text {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+}
+
+.blog__box {
+    display: block;
+    width: 120px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--color-black);
+    outline: 3px solid transparent;
+}
+
+
+.blog__btn {
+    display: inline-block;
+    background: #fff;
+    border: 4px solid var(--dark-blue);
+    border-radius: 40px;
+    padding: 3px;
+    transition: border-color .3s ease-in-out;
+}
+
+.blog__btn-list {
+    position: absolute;
+    display: flex;
+    top: -55px;
+}
+
+.blog__btn svg {
+    width: 30px;
+    height: 30px;
+}
+
+    .blog__btn svg path {
+        stroke: var(--dark-blue);
+        transition: stroke .3s ease-in-out;
+    }
+
+
+
+.blog__btn:hover svg path {
+    stroke: var(--blue);
+}
+
+.blog__btn:active svg path {
+    stroke: var(--light-blue);
+}
+
+.blog__btn:hover {
+    border-color: var(--blue);
+}
+
+.blog__btn:active {
+    border-color: var(--light-blue);
+}
+
+
+
+    .blog__btn-list__item:not(:nth-last-child(1)) {
+        margin-right: 10px;
+    }
+
+   
